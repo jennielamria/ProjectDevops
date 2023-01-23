@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login Page</title>
+                <link rel="stylesheet" href="css/Username_Password.css"/>
+        <style>
+            .red{
+                color: red;
+                font-size: 11px;
+                text-align: center;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <h1 id="text-login">Login</h1>
+
+                         <h:form>
+                                    <div>
+                                        <h:outputLabel class="text-muted" for="username" value="Username"/>  
+                                        <h:inputText
+                                            value="#{tblUser.username}"
+                                            id="username"
+                                            p:type="username"
+                                            class="form-control input-focus"
+                                            p:required="true"
+                                            p:autofocus="true"
+                                            />&nbsp;
+                                        
+                                        <h:outputLabel class="text-muted" for="password" value="Password"/>
+                                        <h:inputSecret
+                                            value="#{tblUser.password}"
+                                            id="password"
+                                            class="form-control input-focus"
+                                            p:required="true"
+                                             /><br/><br/>
+
+                                    </div>
+                             
+                                    <div class="d-flex align-items-center">
+                                        <h:commandButton
+                                            action="#{tblUser.login_user()}"
+                                            type="submit"
+                                            class="
+                                            btn btn-outline-primary
+                                            ms-auto
+                                            w-100
+                                            mt-3
+                                            button-blue
+                                            "
+                                            value="Login"
+                                            />
+                                        
+                                    </div>
+                                    <br/>
+                                    <h6 class="red">Silahkan Periksa Kembali Username Dan Password </h6>
+                                </h:form>
+                           
+                            <div class="card-footer py-3 border-0 mt-4">
+                                <div class="text-center">
+                                    
+                                    <h:form class="d-inline">
+                                        <h:commandLink action="index.xhtml" class="text-dark" value="Back"/>
+                                    </h:form>
+                                </div>
+
+                            </div>
+
+        
+        <script>
+            (function () {
+                "use strict";
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll(".needs-validation");
+
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add("was-validated");
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
+    </h:body>
+</html>

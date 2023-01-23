@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login Page</title>
+                <link rel="stylesheet" href="CSS/Username_Password.css"/>
+    </h:head>
+    <h:body>
+        <h1 id="text-login">Login</h1>
+                                
+                                <h:form>
+                                    <div>
+                                        <h:outputLabel class="text-muted" for="username" value="Username"/>  
+                                        <h:inputText
+                                            value="#{tblUser.username}"
+                                            id="username"
+                                            p:type="username"
+                                            class="form-control input-focus"
+                                            p:required="true"
+                                            p:autofocus="true"
+                                            />&nbsp;
+                                        
+                                        <h:outputLabel class="text-muted" for="password" value="Password"/>
+                                        <h:inputSecret
+                                            value="#{tblUser.password}"
+                                            id="password"
+                                            class="form-control input-focus"
+                                            p:required="true"
+                                            /><br/><br/>&nbsp;
+                                    </div>
+                                    
+                                    <div>
+                                        <h:commandButton
+                                            type="submit"
+                                            class="
+                                            btn btn-outline-primary
+                                            ms-auto
+                                            w-100
+                                            mt-3
+                                            button-blue
+                                            "
+                                            value="Login"
+                                            action="#{tblUser.login_user()}"
+                                            /><br/><br/>&nbsp;
+
+                                    </div>
+                                    
+                                    <div>
+                                        <h:commandButton
+                                            type="submit"
+                                            class="
+                                            btn btn-outline-primary
+                                            ms-auto
+                                            w-100
+                                            mt-3
+                                            button-blue
+                                            "
+                                            value="Registrasi"
+                                            action="register.xhtml"/>
+                                    </div>
+                                </h:form>
+                                    
+                                    <h:form class="d-inline">
+                                        <h:commandLink action="index.html" class="text-dark" value="Back"/>
+                                    </h:form>
+                                
+
+                           
+             
+    </h:body>
+</html>
